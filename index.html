@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专注力波浪计时器 - 基于番茄工作法和注意力波浪理论的时间管理工具">
+    <meta name="keywords" content="专注力,计时器,番茄工作法,注意力管理,生产力工具">
+    <title>专注力波浪计时器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233498db'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- 背景粒子效果容器 -->
+    <div class="particles-container"></div>
+    
+    <div class="container">
+        <h1>专注力波浪计时器</h1>
+        
+        <div class="wave-container">
+            <canvas id="waveCanvas" width="400" height="200"></canvas>
+            <!-- 波浪容器内的装饰元素 -->
+            <div class="wave-overlay"></div>
+        </div>
+        
+        <div class="timer-display">
+            <div id="timeLeft">25:00</div>
+            <div id="sessionType">专注时间</div>
+            <!-- 进度指示器 -->
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn" aria-label="开始计时器">开始</button>
+            <button id="pauseBtn" aria-label="暂停计时器">暂停</button>
+            <button id="resetBtn" aria-label="重置计时器">重置</button>
+        </div>
+        
+        <div class="settings" id="settingsPanel">
+            <div class="settings-header">
+                <h3>计时器设置</h3>
+            </div>
+            <div class="setting-group">
+                <label for="focusTime">专注时间（分钟）:</label>
+                <input type="number" id="focusTime" min="1" max="60" value="25" aria-label="专注时间设置">
+            </div>
+            <div class="setting-group">
+                <label for="breakTime">休息时间（分钟）:</label>
+                <input type="number" id="breakTime" min="1" max="30" value="5" aria-label="休息时间设置">
+            </div>
+            <div class="setting-group">
+                <label for="waveReminder">波动提醒间隔（分钟）:</label>
+                <input type="number" id="waveReminder" min="1" max="25" value="10" aria-label="波动提醒间隔设置">
+            </div>
+        </div>
+        
+        <div class="notifications">
+            <div id="notification" class="hidden">注意力提醒：该调整一下啦！</div>
+        </div>
+        
+        <!-- 完成动画容器 -->
+        <div id="completionAnimation" class="completion-animation hidden">
+            <div class="completion-message">
+                <div class="completion-icon">✓</div>
+                <div id="completionText">专注完成！</div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>关于专注力波浪计时器</h3>
+            <p>基于番茄工作法和注意力波浪理论设计，每25分钟专注工作后休息5分钟。在专注期间，每10分钟会有轻微提醒，帮助你意识到注意力的自然起伏，及时调整状态。</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
