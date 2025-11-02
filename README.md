@@ -36,7 +36,7 @@
 - **Canvas API**：波浪动画和粒子系统的绘制
 
 ## 使用
-
+访问https://zhangmh-coder.github.io/ConWaveTimer/
 ## 界面介绍
 
 ### 主界面组件
